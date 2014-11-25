@@ -200,11 +200,11 @@ problem domain?
 
 ---
 
-*hpc consulting*: solutions for **hpc** problems
+*hpc consulting:* solutions for **hpc** problems
 
 ---
 
-*data services*: solutions for **data** problems
+*data services:* solutions for **data** problems
 
 ---
 
@@ -212,15 +212,15 @@ problems having to do with the **research data lifecycle**
 
 ---
 
-*streamlining* the research pipeline
+streamlining the *research pipeline*
 
 ---
 
-*facilitating* basic data management needs
+facilitating basic *data management* needs
 
 ---
 
-aimed at producing *useful research datasets*
+aimed at producing useful *research datasets*
 
 ---
 
