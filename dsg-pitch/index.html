@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>slides</title>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<style type='text/css'>
+@import url(http://fonts.googleapis.com/css?family=Roboto:700);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing:-5px;
+  background:#333;
+  background-size:100%;
+  color:#F9F9F9;
+  margin:0;
+  padding:0;
+  font-weight:700;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em {
+  font-style:normal;
+  color:#99CC00;
+}
+
+strong {
+  font-style:normal;
+  color:#FF4444;
+}
+
+a {
+  color:#33B5E5;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: Menlo, monospace;
+}
+
+
+</style>
+<script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0, ti;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n], t;
+        document.body.className = e.dataset.bodyclass || '';
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        t = parseInt(e.dataset.timeToNext || 0, 10);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 2) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() { go(++cur % (s.length)); };
+    function fwd() { go(Math.min(s.length - 1, ++cur)); }
+    function rev() { go(Math.max(0, --cur)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+    go(cur);
+};
+</script></head><body>
+<div><p>hello</p>
+</div>
+<div><p>agenda</p>
+</div>
+<div><ul>
+<li>diagnosis</li>
+<li>rx</li>
+</ul>
+</div>
+<div><p>diagnosis</p>
+</div>
+<div><p><em>application development</em> group?</p>
+</div>
+<div><p>no <em>mission</em></p>
+</div>
+<div><p>no <em>constraints</em></p>
+</div>
+<div><p>no <em>metrics</em></p>
+</div>
+<div><p>no <em>process</em></p>
+</div>
+<div><p>no <em>people</em></p>
+</div>
+<div><p>no <em>power</em></p>
+</div>
+<div><p>current process</p>
+</div>
+<div><p>clients are asked for <em>a wishlist</em></p>
+</div>
+<div><p>asked for their <em>holy grail</em></p>
+</div>
+<div><p>client says they just need a <em>relational database</em></p>
+</div>
+<div><p>client says they just need a <em>data portal</em></p>
+</div>
+<div><p>client says they just need a <em>custom application</em></p>
+</div>
+<div><p>and that will solve all their problems</p>
+</div>
+<div><p>but we can&#39;t deliver <em>holy grails</em></p>
+</div>
+<div><ul>
+<li>too <strong>vague</strong></li>
+<li>too <strong>open-ended</strong></li>
+</ul>
+</div>
+<div><p>but the <em>real problem</em> is ...</p>
+</div>
+<div><p>wishlists and holy grails are not <strong>replicable</strong></p>
+</div>
+<div><p>end result: <em>mutual frustration</em></p>
+</div>
+<div><p>rx!</p>
+</div>
+<div><p>specify <em>mission</em></p>
+</div>
+<div><p>specify <em>services</em></p>
+</div>
+<div><p>specify <em>deliverables</em></p>
+</div>
+<div><p>specify <em>process</em></p>
+</div>
+<div><p>specify <em>limits</em></p>
+</div>
+<div><p>specify <em>metrics</em></p>
+</div>
+<div><p>ok, let&#39;s specify</p>
+</div>
+<div><p>mission?</p>
+</div>
+<div><p>rcc?</p>
+</div>
+<div><p>we are <strong>research</strong> computing  </p>
+</div>
+<div><p>our mission is to <strong>amplify</strong> research</p>
+</div>
+<div><p>division of labor?</p>
+</div>
+<div><ul>
+<li>hpc services</li>
+<li>hpc consulting</li>
+<li><em>?</em></li>
+</ul>
+</div>
+<div><ul>
+<li>hpc services</li>
+<li>hpc consulting</li>
+<li><em>other stuff</em></li>
+</ul>
+</div>
+<div><ul>
+<li>hpc services</li>
+<li>hpc consulting</li>
+<li><em>application development group?</em></li>
+</ul>
+</div>
+<div><ul>
+<li>hpc services</li>
+<li>hpc consulting</li>
+<li><em>data services!</em></li>
+</ul>
+</div>
+<div><p>WAT!?</p>
+</div>
+<div><p>data services group?</p>
+</div>
+<div><p><strong>dsg</strong></p>
+</div>
+<div><p>how would this fit into the rcc&#39;s <em>mission</em>?</p>
+</div>
+<div><p><em>amplifying</em> research</p>
+</div>
+<div><p><em>hpc consulting:</em> enabling new forms of research</p>
+</div>
+<div><p><em>data services:</em> streamlining research</p>
+</div>
+<div><p>problem domain?</p>
+</div>
+<div><p><em>hpc consulting</em>: solutions for <strong>hpc</strong> problems</p>
+</div>
+<div><p><em>data services</em>: solutions for <strong>data</strong> problems</p>
+</div>
+<div><p>problems having to do with the <strong>research data lifecycle</strong></p>
+</div>
+<div><p><em>streamlining</em> the research pipeline</p>
+</div>
+<div><p><em>facilitating</em> basic data management needs</p>
+</div>
+<div><p>aimed at producing <em>useful research datasets</em></p>
+</div>
+<div><p>datasets that can be <em>replicated</em></p>
+</div>
+<div><p>datasets that can be <em>queried</em></p>
+</div>
+<div><p>datasets that can be <em>explored</em></p>
+</div>
+<div><p>datasets that can be <em>archived</em></p>
+</div>
+<div><p>in a <em>simple</em> and <em>consistent</em> manner</p>
+</div>
+<div><p>scope?</p>
+</div>
+<div><p>is it <em>replicable?</em></p>
+</div>
+<div><p>focus on <em>common</em> needs</p>
+</div>
+<div><p>80 / 20</p>
+</div>
+<div><ul>
+<li><em>80%</em> replication</li>
+<li><em>20%</em> customization</li>
+</ul>
+</div>
+<div><p>limits?</p>
+</div>
+<div><p><strong>6 hours</strong> complimentary <em>consulting</em> time</p>
+</div>
+<div><p><strong>2 weeks</strong> complimentary <em>development</em> time</p>
+</div>
+<div><p>beyond that, you need a <em>CPP contract</em></p>
+</div>
+<div><p>core services?</p>
+</div>
+<div><p>data <em>transfer/replication/synchronization</em></p>
+</div>
+<div><p>data <em>feature extraction</em></p>
+</div>
+<div><p>data <em>modeling</em></p>
+</div>
+<div><p>data <em>loading</em></p>
+</div>
+<div><p>data <em>api/client</em> design</p>
+</div>
+<div><p>data <em>visualization</em></p>
+</div>
+<div><p>data <em>archiving</em></p>
+</div>
+<div><p>deliverables?</p>
+</div>
+<div><p>managed data <em>transfers</em></p>
+</div>
+<div><p>useable data <em>tables</em></p>
+</div>
+<div><p>useable data <em>schemas</em></p>
+</div>
+<div><p>a dedicated <em>datastore</em> (mysql, dat)</p>
+</div>
+<div><p>useable <em>api</em> and <em>clients</em> (web, cli, notebook)</p>
+</div>
+<div><p>a portable <em>datapackage</em> for dataset archiving</p>
+</div>
+<div><p>beyond core services?</p>
+</div>
+<div><p>cultivate partnerships!</p>
+</div>
+<div><p>university service offerings</p>
+</div>
+<div><ul>
+<li><a href="http://webservices.uchicago.edu/">uchicago web services</a></li>
+<li><a href="http://gis.uchicago.edu/">uchicago gis services</a></li>
+<li><a href="https://itservices.uchicago.edu/services/3d-modelling">uchicago digital media services</a></li>
+</ul>
+</div>
+<div><ul>
+<li><a href="http://dssg.io/">dssg</a></li>
+<li><a href="http://www.knowledgelab.org/people/knowledge_lab/">knowledge lab</a></li>
+</ul>
+</div>
+<div><ul>
+<li><a href="http://datamade.us/">datamade</a></li>
+<li><a href="https://civisanalytics.com/">civis-analytics</a></li>
+<li><a href="http://datascopeanalytics.com/">datascope-analytics</a></li>
+</ul>
+</div>
+<div><p>finis</p>
+</div>
+<div><p>more <a href="https://github.com/rcc-uchicago/docs/tree/master/presentations/dsg-pitch#pitching-dsg">details</a></p>
+</div>
