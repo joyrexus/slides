@@ -277,7 +277,7 @@ limits?
 
 ---
 
-beyond that, you need a *CPP contract*
+beyond that you need a *CPP contract*
 
 ---
 
